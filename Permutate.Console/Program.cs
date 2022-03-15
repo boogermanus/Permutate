@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Diagnostics;
 using Permutate;
 
@@ -12,7 +11,6 @@ namespace PermutateConsole
             var stopWatch = new Stopwatch();
             stopWatch.Start();
             var permutator = new Permutator();
-
             var list = permutator.GetPermutations(permutator.Alphabet, 6);
 
             // foreach (var permutate in list)

@@ -64,7 +64,7 @@ namespace Permutate.Tests
             var list = new List<string> {"a", "b"};
             var expected = new List<string> {"aa", "ab", "ba", "bb"};
 
-            Assert.That(() => _permutator.GetPermutations(list, 2), Is.EquivalentTo(expected));
+            Assert.That(() => _permutator.GetPermutations(list, 2), Is.EqualTo(expected));
         }
     }
 }
