@@ -21,7 +21,7 @@ namespace Permutate.Wordle
 
             var numberOfPermutations = word.Split(' ').Length - 1;
 
-            var permutator = new PermutatorOriginal();
+            var permutator = new Permutator();
             var permutations = permutator.GetPermutations(permutator.Alphabet, numberOfPermutations);
 
             foreach (var permutation in permutations)
