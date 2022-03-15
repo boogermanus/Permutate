@@ -7,7 +7,7 @@ namespace Permutate
 
     public class Permutator
     {
-        public List<string> Alphabet = new List<string>
+        public readonly List<string> Alphabet = new List<string>
         {
             "a",
             "b",
