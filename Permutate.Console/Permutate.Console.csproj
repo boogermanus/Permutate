@@ -6,4 +6,8 @@
     <RootNamespace>PermutateConsole</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Permutate\Permutate.csproj" />
+  </ItemGroup>
+
 </Project>
