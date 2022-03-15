@@ -7,7 +7,7 @@ namespace Permutate
 
     public class Permutator
     {
-        public readonly List<string> Alphabet = new List<string>
+        public readonly List<string> Alphabet = new()
         {
             "a",
             "b",
@@ -46,6 +46,7 @@ namespace Permutate
 
         private static void CheckArguments(List<string> list, int permutations)
         {
+            if (list == null) throw new ArgumentNullException(nameof(list));
             if (list == null)
                 throw new ArgumentNullException(nameof(list));
 
