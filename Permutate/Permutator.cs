@@ -46,7 +46,6 @@ namespace Permutate
 
         private static void CheckArguments(List<string> list, int permutations)
         {
-            if (list == null) throw new ArgumentNullException(nameof(list));
             if (list == null)
                 throw new ArgumentNullException(nameof(list));
 
