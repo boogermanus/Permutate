@@ -7,7 +7,7 @@ namespace Permutate
 
     public class Permutator
     {
-        public static List<string> Alphabet = new List<string>
+        public List<string> Alphabet = new List<string>
         {
             "a",
             "b",
