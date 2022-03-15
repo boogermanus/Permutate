@@ -24,21 +24,14 @@ namespace Permutate.Tests
         [Test]
         public void GetPermutationsShouldNotThrow()
         {
-            Assert.That(() => _permutator.GetPermutations(new List<string>() {"a"}, 1), Throws.Nothing);
+            Assert.That(() => _permutator.GetPermutations("a", 1), Throws.Nothing);
         }
 
         [Test]
         public void GetPermutationsShouldThrowForEmptyList()
         {
-            Assert.That(() => _permutator.GetPermutations(new List<string>(), 0), 
-                Throws.ArgumentException.With.Message.Contains("elements"));
-        }
-
-        [Test]
-        public void GetPermutationsShouldThrowForNullList()
-        {
-            Assert.That(() => _permutator.GetPermutations(null, 0), 
-                Throws.ArgumentNullException);
+            Assert.That(() => _permutator.GetPermutations("", 0), 
+                Throws.ArgumentException.With.Message.Contains("null or empty"));
         }
 
         [Test]
@@ -46,7 +39,7 @@ namespace Permutate.Tests
         {
             var list = new List<string>() {"a"};
 
-            Assert.That(() => _permutator.GetPermutations(list), Is.EquivalentTo(list));
+            Assert.That(() => _permutator.GetPermutations("a"), Is.EquivalentTo(list));
         }
 
         [Test]
@@ -54,7 +47,7 @@ namespace Permutate.Tests
         {
             var list = new List<string>() {"a"};
 
-            Assert.That(() => _permutator.GetPermutations(list, 0),
+            Assert.That(() => _permutator.GetPermutations("a", 0),
                 Throws.ArgumentException.With.Message.Contains("cannot be 0"));
         }
 
@@ -64,7 +57,7 @@ namespace Permutate.Tests
             var list = new List<string> {"a", "b"};
             var expected = new List<string> {"aa", "ab", "ba", "bb"};
 
-            Assert.That(() => _permutator.GetPermutations(list, 2), Is.EqualTo(expected));
+            Assert.That(() => _permutator.GetPermutations("ab", 2), Is.EqualTo(expected));
         }
     }
 }
