@@ -14,7 +14,7 @@ namespace PermutateConsole
             var permutator = new PermutatorOriginal();
             var permutatorLinq = new Permutator();
             // var list = permutator.GetPermutations(permutator.Alphabet, 6);
-            var list = permutatorLinq.GetPermutations(permutatorLinq.Alphabet, 3);
+            var list = permutatorLinq.GetPermutations(Permutator.Alphabet, 3);
             // foreach (var permutate in list)
             // {
             //     Console.WriteLine(permutate);

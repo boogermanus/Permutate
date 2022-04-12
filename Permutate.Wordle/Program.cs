@@ -21,8 +21,15 @@ namespace Permutate.Wordle
 
             var numberOfPermutations = word.Split(' ').Length - 1;
 
+            Console.WriteLine("Please enter characters to exclude");
+            Console.Write(">");
+
+            var charactersToExclude = Console.ReadLine();
+
+            var alphabet = Permutator.GetAlphabet(charactersToExclude);
+
             var permutator = new Permutator();
-            var permutations = permutator.GetPermutations(permutator.Alphabet, numberOfPermutations);
+            var permutations = permutator.GetPermutations(alphabet, numberOfPermutations);
 
             foreach (var permutation in permutations)
             {
