@@ -37,7 +37,7 @@ namespace Permutate
             {
                 var index = value.IndexOf(i);
 
-                if (index > 0)
+                if (index != -1)
                     value = value.Remove(index, 1);
             }
 

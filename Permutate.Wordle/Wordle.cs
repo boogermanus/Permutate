@@ -9,7 +9,7 @@ namespace Permutate.Wordle
     public class Wordle
     {
         private string _theWord;
-        private string _alaphbet;
+        private string _alaphbet = string.Empty;
         private HashSet<string> _dictionary;
         
         public Wordle(string[] args)
