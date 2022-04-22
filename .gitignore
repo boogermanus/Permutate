@@ -404,5 +404,4 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 
-appsettings.Production.json
-GrocList.production.db
+Permutate.Wordle/Input.json
