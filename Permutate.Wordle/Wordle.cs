@@ -76,7 +76,7 @@ namespace Permutate.Wordle
                 {
                     foreach (var charToInclude in _input.CharactersToInclude)
                     {
-                        if (_input.Word.Contains(charToInclude))
+                        if (theWord.Contains(charToInclude))
                             if (_dictionary.Contains(theWord))
                                 words.Add(theWord);
                     }
