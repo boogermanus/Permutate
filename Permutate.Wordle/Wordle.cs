@@ -74,12 +74,16 @@ namespace Permutate.Wordle
 
                 if (_input.CharactersToInclude != string.Empty)
                 {
+                    var contains = new List<bool>();
+                    
                     foreach (var charToInclude in _input.CharactersToInclude)
                     {
                         if (theWord.Contains(charToInclude))
-                            if (_dictionary.Contains(theWord))
-                                words.Add(theWord);
+                            contains.Add(true);
                     }
+
+                    if (contains.Count(c => c) == _input.CharactersToInclude.Length && _dictionary.Contains(theWord))
+                        words.Add(theWord);
                 }
                 else
                 {
