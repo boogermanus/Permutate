@@ -62,8 +62,9 @@ namespace Permutate.Wordle
             
             foreach (var permutation in permutations)
             {
-                string theWord = string.Empty;
-                int count = 0;
+                var theWord = string.Empty;
+                var count = 0;
+                
                 foreach (var letter in _input.Word)
                 {
                     if (letter == ' ')
@@ -73,23 +74,10 @@ namespace Permutate.Wordle
                 }
 
                 if (_input.CharactersToInclude != string.Empty)
-                {
-                    var contains = new List<bool>();
-                    
-                    foreach (var charToInclude in _input.CharactersToInclude)
-                    {
-                        if (theWord.Contains(charToInclude))
-                            contains.Add(true);
-                    }
-
-                    if (contains.Count(c => c) == _input.CharactersToInclude.Length && _dictionary.Contains(theWord))
-                        words.Add(theWord);
-                }
+                    AddWordsThatMatch(theWord, words);
                 else
-                {
                     if (_dictionary.Contains(theWord))
                         words.Add(theWord);
-                }
 
             }
             
@@ -97,6 +85,20 @@ namespace Permutate.Wordle
             words.ForEach(Console.WriteLine);
             stopWatch.Stop();
             Console.WriteLine(stopWatch.Elapsed);
+        }
+
+        private void AddWordsThatMatch(string theWord, List<string> words)
+        {
+            var contains = new List<bool>();
+
+            foreach (var charToInclude in _input.CharactersToInclude)
+            {
+                if (theWord.Contains(charToInclude))
+                    contains.Add(true);
+            }
+
+            if (contains.Count(c => c) == _input.CharactersToInclude.Length && _dictionary.Contains(theWord))
+                words.Add(theWord);
         }
     }
 }
